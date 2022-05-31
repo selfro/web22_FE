@@ -1,0 +1,18 @@
+<h1 class="uebersicht marginLeft">Nachhilfe-Angebote</h1>
+<p class="marginLeft"><i>Hier siehst du alle verfügbaren Nachhilfe-Angebote!
+  Mit einem Klick siehst du noch genauere Details.
+  Viel Spaß beim Stöbern! :)</i></p>
+
+<div class="ui middle aligned selection divided list">
+
+  <ng-container *ngFor="let offer of offers">
+    <a class="item kwm-offer-list-item" [offer]="offer"
+       [routerLink]="offer.id.toString()" *ngIf="isFuture(offer) && !isBooked(offer)">
+    </a>
+  </ng-container>
+
+  <div *ngIf="!offers" class="ui active dimmer">
+    <div class="ui large text loader">Daten werden geladen ...</div>
+  </div>
+  <p *ngIf="offers && !offers.length">Es wurden leider noch keine Angebote erstellt!</p>
+</div>

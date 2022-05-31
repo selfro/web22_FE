@@ -1,0 +1,31 @@
+<h1 class="uebersicht marginLeft">Willkommen zurück, {{getName()}}!</h1>
+<p class="marginLeft" *ngIf="isTutor()"><i>Hier findest du deine Übersicht über deine Nachhilfe-Angebote!
+  Mithilfe der Filter, kannst du sie eingrenzen.
+  Angebote, die noch nicht gebucht wurden, kannst du jederzeit bearbeiten oder löschen.</i></p>
+<p class="marginLeft" *ngIf="!isTutor()"><i>Hier findest du deine Übersicht über deine gebuchten Nachhilfe-Angebote!
+</i></p>
+<p class="marginLeft"><i>Schön, dass du Teil von <b>KWM Go Student</b> bist! :)</i></p>
+<br>
+
+<div class="ui middle aligned selection divided list">
+  <h2 class="uebersicht marginLeft" *ngIf="isTutor()">Deine aktuell verfügbaren Nachhilfen</h2>
+  <ng-container *ngFor="let offer of offers">
+    <a class="item kwm-offer-user-list-item" [offer]="offer"
+       [routerLink]="offer.id.toString()" *ngIf="isFuture(offer) && !isBooked(offer) && isOwnOffer(offer) && isTutor()">
+    </a>
+  </ng-container>
+
+  <br *ngIf="isTutor()">
+  <hr *ngIf="isTutor()">
+  <h2 class="uebersicht marginLeft">Deine gebuchten Nachhilfen</h2>
+  <ng-container *ngFor="let offer of offers">
+    <a class="item kwm-offer-user-list-item" [offer]="offer"
+       [routerLink]="offer.id.toString()" *ngIf="isFuture(offer) && isBooked(offer) && tutorOrLearner(offer)">
+    </a>
+  </ng-container>
+
+  <div *ngIf="!offers" class="ui active dimmer">
+    <div class="ui large text loader">Daten werden geladen ...</div>
+  </div>
+  <p *ngIf="offers && !offers.length">Du hast leider noch keine Nachhilfen!</p>
+</div>

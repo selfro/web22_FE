@@ -1,0 +1,33 @@
+<h1 class="formH1">Neues Nachhilfe-Angebot</h1>
+<form class="ui large form " [formGroup]="offerForm" (ngSubmit)="submitForm()">
+  <input type="hidden" formControlName="id">
+  <div class="field">
+    <label>Lehrveranstaltung</label>
+    <input formControlName="lva" type="text">
+    <div *ngIf="errors['lva']" class="ui negative message">
+      {{errors['lva']}}
+    </div>
+  </div>
+  <div class="field">
+    <label>Datum</label>
+    <input type="date" formControlName="date">
+    <div *ngIf="errors['date']" class="ui negative message">
+      {{errors['date']}}
+    </div>
+  </div>
+  <div class="field">
+    <label>Start-Uhrzeit</label>
+    <input type="datetime-local" formControlName="start">
+    <div *ngIf="errors['start']" class="ui negative message">
+      {{errors['start']}}
+    </div>
+  </div>
+  <div class="field">
+    <label>End-Uhrzeit</label>
+    <input type="datetime-local" formControlName="end">
+    <div *ngIf="errors['end']" class="ui negative message">
+      {{errors['end']}}
+    </div>
+  </div>
+  <button type="submit" class="ui button teal" [disabled]="offerForm.invalid">Speichern</button>
+</form>

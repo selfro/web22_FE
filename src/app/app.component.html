@@ -1,0 +1,11 @@
+<div class="ui {{isLoggedIn()?'five':'three'}} item tabs menu">
+  <a routerLink="home" routerLinkActive="active" class="item">Home</a>
+  <a routerLink="offers" routerLinkActive="active" class="item">Angebote</a>
+  <a *ngIf="isLoggedIn()" [routerLink]="['offers/user/', getCurrentUserId()]"
+     routerLinkActive="active" class="item">Deine Übersicht</a>
+  <a *ngIf="isLoggedIn() && isTutor()"routerLink="admin" routerLinkActive="active" class="item">Administration</a>
+  <a routerLink="login" routerLinkActive="active" class="item">{{getLoginLabel()}}</a>
+</div>
+
+<router-outlet></router-outlet>
+

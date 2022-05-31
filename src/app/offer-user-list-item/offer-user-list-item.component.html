@@ -1,0 +1,7 @@
+<h2>{{offer?.lva}} | {{offer?.date | date: 'dd.MM.yyyy'}}</h2>
+<p><b>Tutor*in:</b> {{offer?.user?.firstName}}  {{offer?.user?.lastName}}
+  | <b>Semester:</b> {{offer?.user?.semester}}</p>
+<i *ngIf="offer?.comment" class="exclamation triangle icon red iconComment"></i>
+<p *ngIf="offer?.comment" class="commentHintTutor">Achtung, du hast eine Nachricht!</p>
+<p><b>Datum:</b> {{offer?.date | date: 'longDate'}}
+  ({{offer?.start | date: 'HH:mm'}} - {{offer?.end | date: 'HH:mm'}} Uhr)</p>

@@ -1,0 +1,7 @@
+<div *ngIf="!offer?.isBooked && isFuture()">
+  <h2>{{offer?.lva}} | {{offer?.date | date: 'dd.MM.yyyy'}}</h2>
+  <p><b>Tutor*in:</b> {{offer?.user?.firstName}}  {{offer?.user?.lastName}}
+    | <b>Semester:</b> {{offer?.user?.semester}}</p>
+  <p><b>Datum:</b> {{offer?.date | date: 'longDate'}}
+    ({{offer?.start | date: 'HH:mm'}} - {{offer?.end | date: 'HH:mm'}} Uhr)</p>
+</div>

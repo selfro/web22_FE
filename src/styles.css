@@ -1,0 +1,115 @@
+/* You can add global styles to this file, and also import other style files */
+
+.imgList {
+  width: 10%;
+  height: 10%;
+  margin-right: 20px;
+  float: left;
+}
+
+@media only screen and (max-width: 1600px) {
+  .imgList{
+    width: 15%;
+    height: 15%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .imgList{
+    width: 20%;
+    height: 20%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .imgList{
+    width: 25%;
+    height: 25%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .imgList{
+    width: 35%;
+    height: 35%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .imgList{
+    width: 45%;
+    height: 45%;
+  }
+}
+
+.formH1{
+  color: teal;
+}
+
+
+.form, .formH1 {
+  margin-left: 20px;
+}
+
+.hint {
+  font-style: italic;
+  color: #718096;
+}
+
+.filterBox {
+  background-color: lightgrey;
+  padding: 1em;
+}
+
+.commentBox {
+  height: 6em;
+  width: 28em !important;
+}
+
+.imageHome {
+  width: 50em;
+  float: right;
+}
+
+@media only screen and (max-width: 650px) {
+  .imageHome {
+    width: 25em;
+  }
+}
+
+.welcomeText {
+  font-size: 50px;
+  color: teal;
+}
+
+.welcomeMessage {
+  align-content: end;
+  color: teal;
+}
+
+.uebersicht {
+  color: teal;
+}
+
+.marginLeft {
+  margin-left: 8px;
+}
+
+.hintComment {
+  font-style: italic;
+  color: grey;
+  font-size: 0.8em;
+}
+
+.commentHintTutor {
+  color: red;
+  font-weight: bold;
+}
+
+.iconComment {
+  float: left;
+}
+
+hr{
+  border-top: 2px solid teal;
+}
